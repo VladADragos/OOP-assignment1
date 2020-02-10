@@ -12,6 +12,7 @@ public class BigTruck extends Car {
      * Represents the cars on the truck
      */
     Queue<Car> flak  = new ArrayDeque<Car>(0);
+
     /**
      * if the ramp is down or up
      */
@@ -49,7 +50,7 @@ public class BigTruck extends Car {
         if(rampIsDown && flak.size()>0) {
             Car car = flak.peek();
             flak.remove();
-            car.position.setLocation(this.position.getX() + 50, this.position.getY() + 50);
+            car.position.setPosition(this.position.getX() + 50, this.position.getY() + 50);
             return car;
         }
         return  null;
@@ -62,21 +63,20 @@ public class BigTruck extends Car {
     public void move(){
         switch (dir){
             case n:
-                position.y -= getCurrentSpeed();
+                position.setY(position.getY()-getCurrentSpeed());
                 break;
             case s:
-                position.y+= getCurrentSpeed();
+                position.setY(position.getY()+getCurrentSpeed());
                 break;
             case e:
-                position.x += getCurrentSpeed();
+                position.setX(position.getX()+getCurrentSpeed());
                 break;
             case w:
-                position.x -= getCurrentSpeed();
+                position.setX(position.getX()-getCurrentSpeed());
                 break;
         }
-
         for(Car c : flak){
-            c.position.setLocation(this.position);
+            c.position.setPosition(this.position.getY(),this.position.getX());
         }
     }
 

@@ -1,4 +1,5 @@
 import javax.management.RuntimeErrorException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,14 +8,15 @@ import java.util.List;
  */
 public class Workshop<T extends Car> {
     /**
-     * list of all cars. The type can be set for solely one class or any car that inherits car class
-     */
-    List<T> cars;
-
-    /**
      * max amount of cars that can be in the workshop
      */
     int maxCars;
+    /**
+     * list of all cars. The type can be set for solely one class or any car that inherits car class
+     */
+    List<T> cars = new ArrayList<T>(maxCars);
+
+
 
 
     /**
@@ -43,8 +45,6 @@ public class Workshop<T extends Car> {
     public void removeCar(T car){
         if (cars.indexOf(car) >=0 ){
             cars.remove(cars.indexOf(car));
-        }else{
-            throw new RuntimeException("That car does not exist in the workshop");
         }
 
     }

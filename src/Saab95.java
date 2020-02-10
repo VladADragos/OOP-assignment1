@@ -58,6 +58,14 @@ public class Saab95 extends Car {
     }
 
 
+    /**
+     * for testing purposes:
+     * @return boolean
+     */
+    public boolean getTurboOn(){
+        return this.turboOn;
+    }
+
 
 }
 

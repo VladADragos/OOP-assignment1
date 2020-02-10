@@ -13,7 +13,7 @@ public  class Car implements IMovable{
     private Color color; // Color of the car
     private String modelName; // The car model name
     public  Dir dir = Dir.s ;
-    public Point position = new Point(0,0);
+    public Position position = new Position(0,0);
 
     /**
      * Car constructor
@@ -92,7 +92,7 @@ public  class Car implements IMovable{
      * @param amount how much the speed of the car should be increased
      */
     public  void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor();
+        currentSpeed = getCurrentSpeed() + speedFactor()*amount;
     }
 
 
@@ -100,7 +100,7 @@ public  class Car implements IMovable{
      * @param amount how much the speed of the car should be decreased
      */
     public  void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor();
+        currentSpeed = getCurrentSpeed() - speedFactor()*amount;
     }
 
 
@@ -110,16 +110,16 @@ public  class Car implements IMovable{
     public void move() {
         switch (dir){
             case n:
-                position.y -= getCurrentSpeed();
+                position.setY(position.getY()-getCurrentSpeed());
                 break;
             case s:
-                position.y+= getCurrentSpeed();
+                position.setY(position.getY()+getCurrentSpeed());
                 break;
             case e:
-                position.x += getCurrentSpeed();
+                position.setX(position.getX()+getCurrentSpeed());
                 break;
             case w:
-                position.x -= getCurrentSpeed();
+                position.setX(position.getX()-getCurrentSpeed());
                 break;
         }
 
@@ -159,13 +159,13 @@ public  class Car implements IMovable{
                 dir = Dir.w;
                 break;
             case s:
-                dir = Dir.n;
+                dir = Dir.e;
                 break;
             case e:
                 dir = Dir.s;
                 break;
             case w:
-                dir = Dir.e;
+                dir = Dir.n;
                 break;
         }
 
@@ -217,8 +217,14 @@ public  class Car implements IMovable{
      * returns the position
      * @return Point
      */
-    public Point getPosition(){
+    public Position getPosition(){
         return position;
     }
+
+    /**
+     * returns the direction of the car
+     * @return Dir
+     */
+    public Dir getDir(){return dir;}
 
 }
