@@ -12,7 +12,7 @@ public  class Car implements IMovable{
     public double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    public  Dir dir = Dir.s ;
+    private   Dir dir = Dir.s ;
     public Position position = new Position(0,0);
 
     /**
@@ -133,16 +133,16 @@ public  class Car implements IMovable{
 
         switch (dir){
             case n:
-                dir = Dir.e;
+                setDir(Dir.e);
                 break;
             case s:
-                dir = Dir.w;
+                setDir(Dir.w);
                 break;
             case e:
-                dir = Dir.n;
+                setDir(Dir.n);
                 break;
             case w:
-                dir = Dir.s;
+                setDir(Dir.s);
                 break;
         }
     }
@@ -152,20 +152,18 @@ public  class Car implements IMovable{
      */
     public void turnRight() {
        // position.rotate(-1);
-
-
         switch (dir){
             case n:
-                dir = Dir.w;
+                setDir(Dir.w);
                 break;
             case s:
-                dir = Dir.e;
+                setDir(Dir.e);
                 break;
             case e:
-                dir = Dir.s;
+                setDir(Dir.s);
                 break;
             case w:
-                dir = Dir.n;
+                setDir(Dir.n);
                 break;
         }
 
@@ -178,7 +176,6 @@ public  class Car implements IMovable{
      * acceleration amount
      * @param amount acceleration amount 0,1(double)
      */
-    // TODO fix this method according to lab pm
     public void gas(double amount) {
         if(amount >= 0 && amount <= 1 ){
             incrementSpeed(amount);
@@ -226,5 +223,14 @@ public  class Car implements IMovable{
      * @return Dir
      */
     public Dir getDir(){return dir;}
+
+    public void setDir(Dir dir) {
+        this.dir = dir;
+    }
+
+    public String test(){
+        return "test";
+    }
+
 
 }

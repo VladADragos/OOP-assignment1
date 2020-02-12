@@ -45,6 +45,7 @@ public class Saab95 extends Car {
      * increases the speed of the car
      * @param amount how much the speed of the car should be increased
      */
+    @Override
     public void incrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
@@ -53,6 +54,7 @@ public class Saab95 extends Car {
      * decreases the speed of the car
      * @param amount how much the speed of the car should be decreased
      */
+    @Override
     public void decrementSpeed(double amount) {
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
@@ -65,7 +67,6 @@ public class Saab95 extends Car {
     public boolean getTurboOn(){
         return this.turboOn;
     }
-
 
 }
 

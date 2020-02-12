@@ -64,7 +64,7 @@ public class CarTest {
     public  void testTurn(){
         car.turnLeft();
 
-        Assert.assertEquals(car.dir,Dir.w);
+        Assert.assertEquals(car.getDir(),Dir.w);
     }
 
     @Test

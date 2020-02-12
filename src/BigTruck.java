@@ -61,25 +61,17 @@ public class BigTruck extends Car {
      */
     @Override
     public void move(){
-        switch (dir){
-            case n:
-                position.setY(position.getY()-getCurrentSpeed());
-                break;
-            case s:
-                position.setY(position.getY()+getCurrentSpeed());
-                break;
-            case e:
-                position.setX(position.getX()+getCurrentSpeed());
-                break;
-            case w:
-                position.setX(position.getX()-getCurrentSpeed());
-                break;
-        }
+
+        super.move();
         for(Car c : flak){
             c.position.setPosition(this.position.getY(),this.position.getX());
         }
     }
 
+    /**
+     * for testing
+     * @param rampIsDown boolean
+     */
     public void setRampIsDown(boolean rampIsDown) {
         this.rampIsDown = rampIsDown;
     }
