@@ -10,7 +10,7 @@ public class Saab95 extends Car {
     /**
      * Saab constructor
      */
-    public Saab95() {
+    Saab95() {
         super(2, Color.red, 125, "Saab95");
         turboOn = false;
     }
@@ -18,14 +18,14 @@ public class Saab95 extends Car {
     /**
      * turns the turbo of Saab on
      */
-    public void setTurboOn() {
+    void setTurboOn() {
         turboOn = true;
     }
 
     /**
      * turns the turbo of the Saab off
      */
-    public void setTurboOff() {
+    void setTurboOff() {
         turboOn = false;
     }
 
@@ -38,33 +38,16 @@ public class Saab95 extends Car {
         double turbo = 1;
         if (turboOn)
             turbo = 1.3;
-        return getEnginePower() * 0.01 * turbo;
+        return super.speedFactor() * turbo;
     }
 
-    /**
-     * increases the speed of the car
-     * @param amount how much the speed of the car should be increased
-     */
-    @Override
-    public void incrementSpeed(double amount) {
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-    }
-
-    /**
-     * decreases the speed of the car
-     * @param amount how much the speed of the car should be decreased
-     */
-    @Override
-    public void decrementSpeed(double amount) {
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-    }
 
 
     /**
      * for testing purposes:
      * @return boolean
      */
-    public boolean getTurboOn(){
+    boolean getTurboOn(){
         return this.turboOn;
     }
 

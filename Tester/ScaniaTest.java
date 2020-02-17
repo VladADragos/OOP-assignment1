@@ -9,12 +9,12 @@ public class ScaniaTest {
     @Test
     public void incrementFlak() {
         scania.incrementFlak();
-        assertEquals(scania.getFlak(),1,0);
+        assertEquals(scania.getFlakAngle(),1,0);
 
         for(int i=0;i<70;i++){
             scania.incrementFlak();
         }
-        assertTrue(scania.getFlak()<=70);
+        assertTrue(scania.getFlakAngle()<=70);
     }
 
     @Test
@@ -22,17 +22,17 @@ public class ScaniaTest {
         scania.incrementFlak();
         scania.incrementFlak();
         scania.decrementFlak();
-        assertEquals(scania.getFlak(),1,0);
+        assertEquals(scania.getFlakAngle(),1,0);
         scania.decrementFlak();
         scania.decrementFlak();
-        assertEquals(scania.getFlak(),0,0);
+        assertEquals(scania.getFlakAngle(),0,0);
     }
 
     @Test
     public void gas() {
         scania.startEngine();
         scania.gas(1);
-        assertEquals(scania.getCurrentSpeed(),1.1,0);
+        assertEquals(scania.getCurrentSpeed(),2.1,0);
 
     }
 
@@ -42,13 +42,13 @@ public class ScaniaTest {
         scania.gas(1);
         scania.gas(1);
         scania.brake(1);
-        assertEquals(scania.getCurrentSpeed(),1.1,0);
+        assertEquals(scania.getCurrentSpeed(),2.1,0.1);
 
 
     }
 
     @Test
-    public void getFlak() {
-        assertEquals(scania.getFlak(),0,0);
+    public void getFlakAngle() {
+        assertEquals(scania.getFlakAngle(),0,0);
     }
 }

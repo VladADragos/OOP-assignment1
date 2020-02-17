@@ -10,10 +10,10 @@ public class WorkshopTest {
     public void addCar() {
         generalWorkshop.addCar(new Volvo240());
         generalWorkshop.addCar(new Saab95());
-        generalWorkshop.addCar(new Scania());
-        generalWorkshop.addCar(new BigTruck());
+        //generalWorkshop.addCar(new Scania());
+        //generalWorkshop.addCar(new BigTruck());
 
-        assertEquals(generalWorkshop.cars.size(),4,0);
+        assertEquals(generalWorkshop.cars.size(),2,0);
 
         volvo240Workshop.addCar(new Volvo240());
         assertEquals(volvo240Workshop.cars.size(),1,0);
@@ -22,8 +22,8 @@ public class WorkshopTest {
     @Test
     public void removeCar() {
         Saab95 saab95 = new Saab95();
-        generalWorkshop.addCar(saab95);
         generalWorkshop.removeCar(saab95);
+        //volvo240Workshop.addCar(saab95);
         assertEquals(generalWorkshop.cars.size(),0,0);
 
     }

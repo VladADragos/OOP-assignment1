@@ -10,27 +10,30 @@ public class BigTruckTest {
 
     BigTruck bigTruck = new BigTruck();
 
-    Car car = new Car(4, Color.BLACK,100,"car");
+    //Car car = new Car(4, Color.BLACK,100,"car");
 
     @Test
     public void addCar() {
+        Volvo240 volvo = new Volvo240();
         bigTruck.setRampIsDown(true);
-        bigTruck.addCar(car);
-        assertTrue(bigTruck.flak.contains(car));
+        bigTruck.addCar(volvo);
+        assertTrue(bigTruck.flak.contains(volvo));
     }
 
     @Test
     public void removeCar() {
+        Volvo240 volvo = new Volvo240();
         bigTruck.setRampIsDown(true);
-        bigTruck.addCar(car);
+        bigTruck.addCar(volvo);
         bigTruck.removeCar();
-        assertFalse(bigTruck.flak.contains(car));
+        assertFalse(bigTruck.flak.contains(volvo));
     }
 
     @Test
     public void move() {
+        Volvo240 volvo = new Volvo240();
         bigTruck.setRampIsDown(true);
-        bigTruck.addCar(car);
+        bigTruck.addCar(volvo);
         System.out.println(bigTruck.flak);
         bigTruck.move();
         assertEquals(bigTruck.position.getY(),bigTruck.flak.poll().position.getY(),0);

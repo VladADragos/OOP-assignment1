@@ -1,4 +1,4 @@
-public class Position {
+class Position {
     private double y = 0;
     private double x = 0;
 
@@ -7,27 +7,33 @@ public class Position {
         this.x = x;
     }
 
-    public double getY() {
+    double getY() {
         return y;
     }
-    public double getX() {
+    double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    void setX(double x) {
         this.x = x;
     }
 
-    public void setY(double y) {
+    void setY(double y) {
         this.y = y;
     }
 
-    public void setPosition(double y,double x){
+    void setPosition(double y, double x){
         setY(y);
         setX(x);
     }
 
-    public Position getPosition(){
+    Position getPosition(){
         return new Position(this.getY(),this.getX());
     }
+
+    boolean isClose(Position p, float range){
+        return Math.abs(getX()-p.getX())<range && Math.abs(getY()-p.getY())<range;
+
+    }
+
 }

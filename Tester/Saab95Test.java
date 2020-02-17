@@ -24,20 +24,4 @@ public class Saab95Test {
         assertEquals(saab.speedFactor(),exp,0);
     }
 
-    @Test
-    public void incrementSpeed() {
-        saab.startEngine();
-        saab.incrementSpeed(1);
-
-        assertEquals(saab.getCurrentSpeed(),1.35,0);
-    }
-
-    @Test
-    public void decrementSpeed() {
-        saab.startEngine();
-        saab.incrementSpeed(2);
-        saab.decrementSpeed(1);
-
-        assertEquals(saab.getCurrentSpeed(),1.35,0);
-    }
 }
