@@ -1,6 +1,7 @@
 import org.junit.Test;
-
+import carsnstuff.*;
 import static org.junit.Assert.*;
+import carsnstuff.*;
 // all tests done 02-10-22:17
 public class Saab95Test {
     Saab95 saab = new Saab95();

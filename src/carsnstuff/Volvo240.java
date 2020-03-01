@@ -1,3 +1,5 @@
+package carsnstuff;
+
 import java.awt.*;
 
 /**
@@ -17,14 +19,17 @@ public class Volvo240 extends Car {
 
     /**
      * Calculates and returns speedFactor
+     * 
      * @return speedFactor
      */
     @Override
     public double speedFactor() {
         return getEnginePower() * 0.01 * trimFactor;
     }
+
     /**
      * increases the speed of the car
+     * 
      * @param amount how much the speed of the car should be increased
      */
     public void incrementSpeed(double amount) {
@@ -33,6 +38,7 @@ public class Volvo240 extends Car {
 
     /**
      * decreases the speed of the car
+     * 
      * @param amount how much the speed of the car should be decreased
      */
     public void decrementSpeed(double amount) {

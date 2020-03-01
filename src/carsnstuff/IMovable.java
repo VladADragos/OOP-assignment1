@@ -1,3 +1,5 @@
+package carsnstuff;
+
 /**
  * interface of a movable object
  */
@@ -7,7 +9,6 @@ interface IMovable {
      * moves the object
      */
     void move();
-
 
     /**
      * turns the object left

@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import carsnstuff.*;
 // all tests done 02-10-22:58
 public class WorkshopTest {
     Workshop<Car> generalWorkshop = new Workshop<Car>(8);
@@ -13,10 +14,10 @@ public class WorkshopTest {
         //generalWorkshop.addCar(new Scania());
         //generalWorkshop.addCar(new BigTruck());
 
-        assertEquals(generalWorkshop.cars.size(),2,0);
+        assertEquals(generalWorkshop.getCars().size(),2,0);
 
         volvo240Workshop.addCar(new Volvo240());
-        assertEquals(volvo240Workshop.cars.size(),1,0);
+        assertEquals(volvo240Workshop.getCars().size(),1,0);
     }
 
     @Test
@@ -24,7 +25,7 @@ public class WorkshopTest {
         Saab95 saab95 = new Saab95();
         generalWorkshop.removeCar(saab95);
         //volvo240Workshop.addCar(saab95);
-        assertEquals(generalWorkshop.cars.size(),0,0);
+        assertEquals(generalWorkshop.getCars().size(),0,0);
 
     }
 }

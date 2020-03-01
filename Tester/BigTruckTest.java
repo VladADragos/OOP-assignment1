@@ -1,23 +1,23 @@
 import org.junit.Test;
-
 import javax.annotation.processing.SupportedSourceVersion;
 import java.awt.*;
 import java.util.zip.CheckedOutputStream;
 
 import static org.junit.Assert.*;
+import carsnstuff.*;
 // all tests done 02-10-22.46
 public class BigTruckTest {
 
     BigTruck bigTruck = new BigTruck();
 
-    //Car car = new Car(4, Color.BLACK,100,"car");
+    // Car car = new Car(4, Color.BLACK,100,"car");
 
     @Test
     public void addCar() {
         Volvo240 volvo = new Volvo240();
         bigTruck.setRampIsDown(true);
         bigTruck.addCar(volvo);
-        assertTrue(bigTruck.flak.contains(volvo));
+        assertTrue(bigTruck.getFlak().contains(volvo));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class BigTruckTest {
         bigTruck.setRampIsDown(true);
         bigTruck.addCar(volvo);
         bigTruck.removeCar();
-        assertFalse(bigTruck.flak.contains(volvo));
+        assertFalse(bigTruck.getFlak().contains(volvo));
     }
 
     @Test
@@ -34,14 +34,14 @@ public class BigTruckTest {
         Volvo240 volvo = new Volvo240();
         bigTruck.setRampIsDown(true);
         bigTruck.addCar(volvo);
-        System.out.println(bigTruck.flak);
+        System.out.println(bigTruck.getFlak());
         bigTruck.move();
-        assertEquals(bigTruck.position.getY(),bigTruck.flak.poll().position.getY(),0);
+        assertEquals(bigTruck.getPosition().getY(), bigTruck.getFlak().poll().getPosition().getY(), 0);
     }
 
     @Test
     public void setRampIsDown() {
         bigTruck.setRampIsDown(true);
-        assertTrue(bigTruck.rampIsDown);
+        assertTrue(bigTruck.getRampIsDown());
     }
 }

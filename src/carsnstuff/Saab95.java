@@ -1,3 +1,5 @@
+package carsnstuff;
+
 import java.awt.*;
 
 /**
@@ -10,7 +12,7 @@ public class Saab95 extends Car {
     /**
      * Saab constructor
      */
-    Saab95() {
+    public Saab95() {
         super(2, Color.red, 125, "Saab95");
         turboOn = false;
     }
@@ -18,19 +20,20 @@ public class Saab95 extends Car {
     /**
      * turns the turbo of Saab on
      */
-    void setTurboOn() {
+    public void setTurboOn() {
         turboOn = true;
     }
 
     /**
      * turns the turbo of the Saab off
      */
-    void setTurboOff() {
+    public void setTurboOff() {
         turboOn = false;
     }
 
     /**
      * Calculates and returns speedFactor
+     * 
      * @return speedFactor
      */
     @Override
@@ -41,16 +44,13 @@ public class Saab95 extends Car {
         return super.speedFactor() * turbo;
     }
 
-
-
     /**
      * for testing purposes:
+     * 
      * @return boolean
      */
-    boolean getTurboOn(){
+    public boolean getTurboOn() {
         return this.turboOn;
     }
 
 }
-
-
