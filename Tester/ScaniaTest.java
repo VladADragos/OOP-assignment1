@@ -1,7 +1,8 @@
+import carsnstuff.trucks.Scania;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import carsnstuff.*;
+
 public class ScaniaTest {
 
     Scania scania = new Scania();

@@ -1,7 +1,10 @@
-package carsnstuff;
+package carsnstuff.position;
 
 import java.awt.*;
 
+/**
+ * A double based point
+ */
 public class Position {
     private double y = 0;
     private double x = 0;
@@ -17,6 +20,12 @@ public class Position {
 
     public double getX() {
         return x;
+    }
+    public int getX_Int(){
+        return (int)x;
+    }
+    public int getY_Int(){
+        return (int)y;
     }
 
     public void setX(double x) {
@@ -43,6 +52,12 @@ public class Position {
 
     public Point getAsPoint(){
         return new Point((int)this.getY(),(int)this.getX());
+    }
+
+    public void log(){
+        System.out.println("Y: "+getY());
+        System.out.println("X: "+getX());
+        System.out.println("\n");
     }
 
 }

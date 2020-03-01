@@ -1,7 +1,11 @@
+import carsnstuff.buildings.Workshop;
+import carsnstuff.cars.Car;
+import carsnstuff.cars.Saab95;
+import carsnstuff.cars.Volvo240;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import carsnstuff.*;
+
 // all tests done 02-10-22:58
 public class WorkshopTest {
     Workshop<Car> generalWorkshop = new Workshop<Car>(8);

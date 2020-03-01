@@ -1,4 +1,4 @@
-package carsnstuff;
+package carsnstuff.position;
 
 /**
  * Enum representing direction

@@ -1,9 +1,10 @@
-package carsnstuff;
+package carsnstuff.trucks;
+
+import carsnstuff.cars.Car;
 
 import java.awt.*;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Queue;
 
 /**
@@ -28,10 +29,8 @@ public class BigTruck extends Truck {
      * 
      * @param car the car to be added
      */
-    // TODO consider how to block big truck
     // done?
     public void addCar(Car car) {
-        // TODO make car not able to move
         // done?
         if (rampIsDown && car.getEnginePower() < 300 && flak.size() < maxNumCars && car.hashCode() != this.hashCode()
                 && position.isClose(car.getPosition(), 50)) {
@@ -49,7 +48,7 @@ public class BigTruck extends Truck {
         if (rampIsDown && flak.size() > 0) {
             Car car = flak.peek();
             flak.remove();
-            car.position.setPosition(this.position.getX() + 50, this.position.getY() + 50);
+            car.getPosition().setPosition(this.position.getX() + 50, this.position.getY() + 50);
             car.notBeingTransported();
             return car;
         }
@@ -64,8 +63,7 @@ public class BigTruck extends Truck {
         if (rampIsDown) {
             super.move();
             for (Car c : flak) {
-                // TODO change to protected
-                c.position.setPosition(this.position.getY(), this.position.getX());
+                c.getPosition().setPosition(this.position.getY(), this.position.getX());
             }
         }
 

@@ -1,15 +1,19 @@
 package carsnstuff;
 
+import carsnstuff.interfaces.IMovable;
+import carsnstuff.position.Dir;
+import carsnstuff.position.Position;
+
 import java.awt.*;
 
 public abstract class Vehicle implements IMovable {
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
-    double currentSpeed; // The current speed of the car
+    public double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
     private Dir dir = Dir.s;
-    Position position = new Position(0, 0);
+    protected Position position = new Position(0, 0);
 
     /**
      * Car constructor
@@ -19,7 +23,7 @@ public abstract class Vehicle implements IMovable {
      * @param enginePower the engine power
      * @param modelName   the model name
      */
-    Vehicle(int nrDoors, Color color, int enginePower, String modelName) {
+    public Vehicle(int nrDoors, Color color, int enginePower, String modelName) {
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -82,7 +86,7 @@ public abstract class Vehicle implements IMovable {
     /**
      * stops the engine of the car
      */
-    void stopEngine() {
+    public void stopEngine() {
         currentSpeed = 0;
     }
 
@@ -166,7 +170,7 @@ public abstract class Vehicle implements IMovable {
      * 
      * @param dir direction
      */
-    private void setDir(Dir dir) {
+    public void setDir(Dir dir) {
         this.dir = dir;
     }
 
@@ -229,5 +233,26 @@ public abstract class Vehicle implements IMovable {
         }
 
     }
+
+    public void flipDir(){
+        System.out.println("flipped dir");
+        switch (dir){
+            case n:
+                setDir(Dir.s);
+                break;
+            case s:
+                setDir(Dir.n);
+                break;
+            case e:
+                setDir(Dir.w);
+                break;
+            case w:
+                setDir(Dir.e);
+                break;
+        }
+
+
+    }
+
 
 }

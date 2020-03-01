@@ -1,7 +1,8 @@
+import carsnstuff.cars.Volvo240;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import carsnstuff.*;
+
 public class Volvo240Test {
     Volvo240 volvo = new Volvo240();
     @Test

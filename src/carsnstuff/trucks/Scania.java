@@ -1,4 +1,4 @@
-package carsnstuff;
+package carsnstuff.trucks;
 
 import java.awt.*;
 
@@ -23,16 +23,22 @@ public class Scania extends Truck {
      * increases the angle of ramp
      */
     public void incrementFlak() {
-        if (flakAngle < 70 && getCurrentSpeed() == 0)
+        if (flakAngle < 70 && getCurrentSpeed() == 0){
+            System.out.println("Lifting flak");
             flakAngle++;
+        }
+
     }
 
     /**
      * decreace the angle of the ramp
      */
     public void decrementFlak() {
-        if (flakAngle > 0 && getCurrentSpeed() == 0)
+        if (flakAngle > 0 && getCurrentSpeed() == 0){
+            System.out.println("Lowering flak");
             flakAngle--;
+        }
+
     }
 
     /**

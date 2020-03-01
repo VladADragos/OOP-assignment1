@@ -1,10 +1,10 @@
-package carsnstuff;
+package carsnstuff.interfaces;
 
 /**
  * interface of a movable object
  */
 
-interface IMovable {
+public interface IMovable {
     /**
      * moves the object
      */

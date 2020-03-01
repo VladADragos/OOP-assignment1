@@ -1,4 +1,6 @@
-package carsnstuff;
+package carsnstuff.cars;
+
+import carsnstuff.Vehicle;
 
 import java.awt.*;
 import java.util.Vector;
@@ -22,12 +24,12 @@ public abstract class Car extends Vehicle {
         stopEngine();
     }
 
-    void beingTransported() {
+    public void beingTransported() {
         stopEngine();
         transportMode = true;
     }
 
-    void notBeingTransported() {
+    public void notBeingTransported() {
         transportMode = false;
     }
 

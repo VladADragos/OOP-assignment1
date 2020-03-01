@@ -1,4 +1,4 @@
-package carsnstuff;
+package carsnstuff.cars;
 
 import java.awt.*;
 
@@ -42,6 +42,7 @@ public class Volvo240 extends Car {
      * @param amount how much the speed of the car should be decreased
      */
     public void decrementSpeed(double amount) {
+
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 

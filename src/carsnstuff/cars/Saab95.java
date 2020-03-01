@@ -1,4 +1,4 @@
-package carsnstuff;
+package carsnstuff.cars;
 
 import java.awt.*;
 
@@ -22,6 +22,7 @@ public class Saab95 extends Car {
      */
     public void setTurboOn() {
         turboOn = true;
+        System.out.println("turbo on");
     }
 
     /**
@@ -29,6 +30,7 @@ public class Saab95 extends Car {
      */
     public void setTurboOff() {
         turboOn = false;
+        System.out.println("turbo off");
     }
 
     /**
@@ -50,7 +52,7 @@ public class Saab95 extends Car {
      * @return boolean
      */
     public boolean getTurboOn() {
-        return this.turboOn;
+        return turboOn;
     }
 
 }

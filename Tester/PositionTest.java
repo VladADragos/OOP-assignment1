@@ -1,7 +1,8 @@
+import carsnstuff.position.Position;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import carsnstuff.*;
+
 // all tests passed 02-10-21:44
 public class PositionTest {
     double testY = 42d;

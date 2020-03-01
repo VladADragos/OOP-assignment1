@@ -1,10 +1,9 @@
+import carsnstuff.cars.Volvo240;
+import carsnstuff.trucks.BigTruck;
 import org.junit.Test;
-import javax.annotation.processing.SupportedSourceVersion;
-import java.awt.*;
-import java.util.zip.CheckedOutputStream;
 
 import static org.junit.Assert.*;
-import carsnstuff.*;
+
 // all tests done 02-10-22.46
 public class BigTruckTest {
 
