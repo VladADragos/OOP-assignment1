@@ -85,4 +85,6 @@ public class BigTruck extends Truck {
     public boolean getRampIsDown(){
         return rampIsDown;
     }
+
+
 }

@@ -54,5 +54,9 @@ public class Saab95 extends Car {
     public boolean getTurboOn() {
         return turboOn;
     }
+    @Override
+    public String toString(){
+        return "Saab95";
+    }
 
 }

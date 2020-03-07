@@ -1,6 +1,5 @@
-package gui;
+package newgui;
 
-import carsnstuff.CarRepresentation;
 import carsnstuff.cars.Volvo240;
 
 import javax.swing.*;
@@ -23,7 +22,7 @@ public class CarView extends JFrame {
     private static final int Y = 800;
 
     // The controller member
-    CarRepresentation carC ;
+    CarController carC ;
 
     //List<DrawPanel> drawPanelList = {new DrawPanel<Volvo240>(X, Y - 240),};
 
@@ -47,8 +46,8 @@ public class CarView extends JFrame {
     JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public CarView(String framename, CarRepresentation cr) {
-        this.carC = cr;
+    public CarView(String framename, CarController cc) {
+        this.carC = cc;
         drawPanel = new DrawPanel(X, Y - 240,carC.cars);
         initComponents(framename);
     }

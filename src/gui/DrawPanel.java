@@ -6,6 +6,8 @@ import carsnstuff.position.Position;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -14,20 +16,22 @@ import javax.swing.*;
 public class DrawPanel extends JPanel {
 
     // Just a single image, TODO: Generalize
-    BufferedImage carImage;
-    // To keep track of a singel cars position
-    Position carPosition = new Position(0,0);
+    List<BufferedImage> carImages = new ArrayList<>();
 
+    List<Vehicle> _cars;
     // TODO: Make this genereal for all cars
     void moveit(int x, int y) {
-        carPosition.setPosition(y,x);
+        for(Vehicle c : _cars){
+            c.getPosition().setPosition(y,x);
+        }
     }
 
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y) {
+    public DrawPanel(int x, int y,List<Vehicle> cars) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
+        _cars = cars;
         // Print an error message in case file is not found with a try/catch block
         try {
             // You can remove the "pics" part if running outside of IntelliJ and
@@ -37,7 +41,9 @@ public class DrawPanel extends JPanel {
             // Rememember to rightclick src New -> Package -> name: pics -> MOVE *.jpg to
             // pics.
             // if you are starting in IntelliJ.
-            carImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
+            for(Vehicle c: _cars){
+                carImages.add(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/"+c.toString()+".jpg")));
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -51,6 +57,10 @@ public class DrawPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(carImage, carPosition.getX_Int(), carPosition.getY_Int(), null); // see javadoc for more info on the parameters
+        for(Vehicle v : _cars){
+            int index = _cars.indexOf(v);
+            g.drawImage(carImages.get(index), v.getPosition().getX_Int(), v.getPosition().getY_Int(), null);
+        }
+         // see javadoc for more info on the parameters
     }
 }

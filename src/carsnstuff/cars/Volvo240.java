@@ -46,4 +46,20 @@ public class Volvo240 extends Car {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 
+    @Override
+    public String toString(){
+        return "Volvo240";
+    }
+
+    @Override
+    public void gas(double amount){
+        super.gas(amount);
+    }
+
+    @Override
+    public void brake(double amount) {
+        super.brake(amount);
+    }
+
+
 }

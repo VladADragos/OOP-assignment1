@@ -1,4 +1,4 @@
-package gui;
+package newgui;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,12 +21,7 @@ import carsnstuff.trucks.Scania;
 public class CarController {
     // member fields:
 
-    // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 50;
-    // The timer is started with an listener (see below) that executes the
-    // statements
-    // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
+
 
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
@@ -35,51 +30,14 @@ public class CarController {
 
     // methods:
 
-    public static void main(String[] args) {
-        // Instance of this class
-        CarController cc = new CarController();
 
-        cc.spawnCars();
-
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
-
-        // Start the timer
-        cc.timer.start();
-    }
 
     /*
      * Each step the TimerListener moves all the cars in the list and tells the view
      * to update its images. Change this method to your needs.
      */
 
-    private void spawnCars(){
-        Vehicle car1 = new Volvo240();
-        Vehicle car2 = new Saab95();
-        Vehicle car3 = new Scania();
 
-        car2.getPosition().setPosition(0,100);
-        car3.getPosition().setPosition(0,200);
-
-        cars.add(car1);
-        cars.add(car2);
-        cars.add(car3);
-    }
-    private class TimerListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            System.out.println(e);
-            for (Vehicle car : cars) {
-                car.move();
-                int x = (int) Math.round(car.getPosition().getX());
-                int y = (int) Math.round(car.getPosition().getY());
-                if(car.getPosition().getY() > 800-240-60 || car.getPosition().getY() < 0){
-                    car.flipDir();
-                }
-
-                frame.drawPanel.repaint();
-            }
-        }
-    }
 
     // Calls the gas method for each car once
     void gas(int amount) {

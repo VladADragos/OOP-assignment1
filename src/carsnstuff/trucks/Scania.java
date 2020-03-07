@@ -75,4 +75,9 @@ public class Scania extends Truck {
         return flakAngle;
     }
 
+    @Override
+    public String toString(){
+        return "Scania";
+    }
+
 }

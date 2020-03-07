@@ -1,12 +1,13 @@
 package carsnstuff;
 
 import carsnstuff.interfaces.IMovable;
+import carsnstuff.interfaces.IVehicle;
 import carsnstuff.position.Dir;
 import carsnstuff.position.Position;
 
 import java.awt.*;
 
-public abstract class Vehicle implements IMovable {
+public abstract class Vehicle implements IMovable, IVehicle {
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
